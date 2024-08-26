@@ -10,7 +10,8 @@ export const navItems = [
 export const gridItems = [
   {
     id: 1,
-    title: "turn your learning into a fun, gamified experience.",
+    title:
+      "You learn the difference between Doge, Ethereum, and Bitcoin in a rewarding, easy, and fun way. ",
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
@@ -20,7 +21,7 @@ export const gridItems = [
   },
   {
     id: 2,
-    title: "bringing the next billion users into web3",
+    title: "The problem: Learning Web3 is HARD AF",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
@@ -30,7 +31,8 @@ export const gridItems = [
   },
   {
     id: 3,
-    title: "be one of the first to earn and shape the future with us.",
+    title:
+      "Watching hours and hours of content to still losing money in a rug pull is shitty, we wanted to change that.",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
@@ -40,7 +42,7 @@ export const gridItems = [
   },
   {
     id: 4,
-    title: "learn, play, earn!",
+    title: "Why the F*** should you care?!",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
@@ -51,7 +53,8 @@ export const gridItems = [
 
   {
     id: 5,
-    title: "discover & earn: engage with top brands and get rewarded.",
+    title:
+      "The Solution: We wanted to make learning web3 as easy as playing a game, doing a quest/task, and being rewarded for it. ",
     description: "",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "",
@@ -61,7 +64,7 @@ export const gridItems = [
   },
   {
     id: 6,
-    title: "tasks, tutorials, tokens!",
+    title: "Tasks, Tutorials, Tokens!",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",

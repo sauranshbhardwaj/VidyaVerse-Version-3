@@ -188,7 +188,6 @@ export function PlaceholdersAndVanishInput({
       )}
       action="https://send.pageclip.co/EFit88AjCbADzJHwNTUVTDgvYUcWJTIX"
       method="post"
-      onSubmit={handleSubmit}
     >
       <canvas
         className={cn(

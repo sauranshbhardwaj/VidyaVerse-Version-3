@@ -11,7 +11,7 @@ import Image from "next/image";
 const Hero = () => {
   return (
     <section id="home">
-      <div className="pb-20 pt-36">
+      <div className="pb-6 pt-36">
         {/**
          *  UI: Spotlights
          *  Link: https://ui.aceternity.com/components/spotlight
@@ -62,12 +62,12 @@ const Hero = () => {
              *  change md:text-6xl, add more responsive code
              */}
             <TextGenerateEffect
-              words="learn web3 & get paid"
+              words="Learn Web3 & Get Paid"
               className="text-center text-[35px] md:text-6xl lg:text-7xl"
             />
 
             <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-              Watch Tutorials, Complete Tasks, Get Rewarded.
+              Watch Courses, Complete Tasks & Get Rewarded in Tokens.
             </p>
           </div>
         </div>

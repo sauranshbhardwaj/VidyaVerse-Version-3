@@ -14,6 +14,7 @@ export function PlaceholdersAndVanishInput({
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 }) {
   const [currentPlaceholder, setCurrentPlaceholder] = useState(0);
+  const [submitted, setSubmitted] = useState(false);
 
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const startAnimation = () => {
@@ -143,6 +144,7 @@ export function PlaceholdersAndVanishInput({
         } else {
           setValue("");
           setAnimating(false);
+          setSubmitted(true); // Set submitted to true when animation is done
         }
       });
     };
@@ -174,6 +176,7 @@ export function PlaceholdersAndVanishInput({
     vanishAndSubmit();
     onSubmit && onSubmit(e);
   };
+
   return (
     <form
       className={cn(
@@ -182,6 +185,7 @@ export function PlaceholdersAndVanishInput({
       )}
       action="https://send.pageclip.co/EFit88AjCbADzJHwNTUVTDgvYUcWJTIX"
       method="post"
+      onSubmit={handleSubmit}
     >
       <canvas
         className={cn(
@@ -207,7 +211,6 @@ export function PlaceholdersAndVanishInput({
         )}
         name="email"
       />
-
       <button
         disabled={!value}
         type="submit"
@@ -236,43 +239,66 @@ export function PlaceholdersAndVanishInput({
               strokeDashoffset: value ? 0 : "50%",
             }}
             transition={{
-              duration: 0.3,
-              ease: "linear",
+              duration: 0.2,
+              delay: 0.2,
             }}
           />
-          <path d="M13 18l6 -6" />
-          <path d="M13 6l6 6" />
+          <motion.path
+            d="M13 18l6 -6"
+            initial={{
+              strokeDasharray: "25%",
+              strokeDashoffset: "25%",
+            }}
+            animate={{
+              strokeDashoffset: value ? 0 : "25%",
+            }}
+            transition={{
+              duration: 0.2,
+            }}
+          />
+          <motion.path
+            d="M13 6l6 6"
+            initial={{
+              strokeDasharray: "25%",
+              strokeDashoffset: "25%",
+            }}
+            animate={{
+              strokeDashoffset: value ? 0 : "25%",
+            }}
+            transition={{
+              duration: 0.2,
+              delay: 0.4,
+            }}
+          />
         </motion.svg>
       </button>
-
-      <div className="absolute inset-0 flex items-center rounded-full pointer-events-none">
-        <AnimatePresence mode="wait">
-          {!value && (
-            <motion.p
-              initial={{
-                y: 5,
-                opacity: 0,
-              }}
-              key={`current-placeholder-${currentPlaceholder}`}
-              animate={{
-                y: 0,
-                opacity: 1,
-              }}
-              exit={{
-                y: -15,
-                opacity: 0,
-              }}
-              transition={{
-                duration: 0.3,
-                ease: "linear",
-              }}
-              className="dark:text-zinc-500 text-sm sm:text-base font-normal text-neutral-500 pl-4 sm:pl-12 text-left w-[calc(100%-2rem)] truncate"
-            >
-              {placeholders[currentPlaceholder]}
-            </motion.p>
-          )}
-        </AnimatePresence>
-      </div>
+      <AnimatePresence>
+        {!value && !submitted && (
+          <motion.span
+            key={currentPlaceholder}
+            className={cn(
+              "absolute text-black/40 dark:text-white/40 transform text-sm sm:text-base top-1/2 left-4 sm:left-10 -translate-y-1/2 select-none"
+            )}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            {placeholders[currentPlaceholder]}
+          </motion.span>
+        )}
+        {submitted && (
+          <motion.span
+            className={cn(
+              "absolute text-black/60 dark:text-white/60 transform text-sm sm:text-base top-1/2 left-4 sm:left-10 -translate-y-1/2 select-none"
+            )}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            Submitted! 🎉
+          </motion.span>
+        )}
+      </AnimatePresence>
     </form>
   );
 }

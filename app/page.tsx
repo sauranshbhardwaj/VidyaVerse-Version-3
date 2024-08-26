@@ -5,6 +5,7 @@ import { navItems } from "@/data";
 import Hero from "@/components/Hero";
 import Grid from "@/components/Grid";
 import Footer from "@/components/Footer";
+import Approach from "@/components/Approach";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import EmailList from "@/components/EmailList";
 
@@ -16,6 +17,7 @@ const Home = () => {
         <Hero />
         <EmailList />
         <Grid />
+        <Approach />
         <Footer />
       </div>
     </main>

@@ -17,7 +17,7 @@ const Footer = () => {
       <div className="flex flex-col items-center">
         <h1 className="heading lg:max-w-[60vw] leading text-center">
           JOIN THE ASTRONAUT CORE OR{" "}
-          <span className="text-purple">GET REKT</span>
+          <span className="text-purple">GET REKT!</span>
         </h1>
 
         {/* Social media icons centered below the heading */}

@@ -26,6 +26,8 @@ const Footer = () => {
             <a
               key={info.id}
               href={info.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center"
             >
               <div className="w-16 h-16 flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300">
